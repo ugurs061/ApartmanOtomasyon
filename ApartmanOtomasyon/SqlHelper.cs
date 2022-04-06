@@ -15,8 +15,8 @@ namespace ApartmanOtomasyon
 
         public SqlHelper()//classı her çağırdığımızda sql ile bağlantı sağlaması için constructor oluşturuyoruz.
         {
-            Connection=new SqlConnection();
-            ConnectingString = "Data Source=DESKTOP-9UN9R3H;Initial Catalog=Apartman;Integrated Security=True";
+            ConnectingString = @"Data Source=DESKTOP-9UN9R3H;Initial Catalog=Apartman;Integrated Security=True";
+            Connection = new SqlConnection(ConnectingString);
         }
 
         //sqldeki proc ları çalıştımak için metod yazıyoruz.
@@ -35,7 +35,7 @@ namespace ApartmanOtomasyon
         //verileri getirtmek için metod tanımlıyoruz.
         public DataTable GetTable(string query)
         { 
-            SqlDataAdapter sda = new SqlDataAdapter();
+            SqlDataAdapter sda = new SqlDataAdapter(query,ConnectingString);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;

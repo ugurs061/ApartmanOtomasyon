@@ -35,14 +35,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeGiderTarih = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.lBoxGider = new System.Windows.Forms.ListBox();
+            this.lBoxTutar = new System.Windows.Forms.ListBox();
+            this.lBoxTarih = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbElektrik
@@ -106,16 +112,21 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(428, 36);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(231, 35);
             this.numericUpDown1.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dateTimeGiderTarih
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(428, 94);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(230, 35);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimeGiderTarih.Location = new System.Drawing.Point(428, 94);
+            this.dateTimeGiderTarih.Name = "dateTimeGiderTarih";
+            this.dateTimeGiderTarih.Size = new System.Drawing.Size(230, 35);
+            this.dateTimeGiderTarih.TabIndex = 7;
             // 
             // button1
             // 
@@ -125,13 +136,14 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Ekle";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbElektrik);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbSu);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateTimeGiderTarih);
             this.groupBox1.Controls.Add(this.cbAsansor);
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.cbTemizlik);
@@ -145,48 +157,83 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Giderler";
             // 
-            // listBox1
+            // lBoxGider
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(24, 267);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(191, 244);
-            this.listBox1.TabIndex = 10;
+            this.lBoxGider.FormattingEnabled = true;
+            this.lBoxGider.ItemHeight = 20;
+            this.lBoxGider.Location = new System.Drawing.Point(5, 25);
+            this.lBoxGider.Name = "lBoxGider";
+            this.lBoxGider.Size = new System.Drawing.Size(191, 224);
+            this.lBoxGider.TabIndex = 10;
             // 
-            // listBox2
+            // lBoxTutar
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(359, 267);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(191, 244);
-            this.listBox2.TabIndex = 11;
+            this.lBoxTutar.FormattingEnabled = true;
+            this.lBoxTutar.ItemHeight = 20;
+            this.lBoxTutar.Location = new System.Drawing.Point(11, 25);
+            this.lBoxTutar.Name = "lBoxTutar";
+            this.lBoxTutar.Size = new System.Drawing.Size(185, 224);
+            this.lBoxTutar.TabIndex = 11;
             // 
-            // listBox3
+            // lBoxTarih
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(670, 267);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(191, 244);
-            this.listBox3.TabIndex = 12;
+            this.lBoxTarih.FormattingEnabled = true;
+            this.lBoxTarih.ItemHeight = 20;
+            this.lBoxTarih.Location = new System.Drawing.Point(11, 25);
+            this.lBoxTarih.Name = "lBoxTarih";
+            this.lBoxTarih.Size = new System.Drawing.Size(185, 224);
+            this.lBoxTarih.TabIndex = 12;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lBoxGider);
+            this.groupBox2.Location = new System.Drawing.Point(37, 255);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(202, 263);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Gider İsmi";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lBoxTutar);
+            this.groupBox3.Location = new System.Drawing.Point(340, 255);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(202, 263);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tutar";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lBoxTarih);
+            this.groupBox4.Location = new System.Drawing.Point(646, 255);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(202, 263);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tarih";
             // 
             // Giderler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(887, 530);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Giderler";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giderler";
+            this.Load += new System.EventHandler(this.Giderler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -200,11 +247,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeGiderTarih;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox lBoxGider;
+        private System.Windows.Forms.ListBox lBoxTutar;
+        private System.Windows.Forms.ListBox lBoxTarih;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
