@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ApartmanOtomasyon
 {
-    public partial class Form1 : Form
+    public partial class formAnasayfa : Form
     {
-        public Form1()
+        public formAnasayfa()
         {
             InitializeComponent();
         }

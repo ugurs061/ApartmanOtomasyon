@@ -1,6 +1,6 @@
 ﻿namespace ApartmanOtomasyon
 {
-    partial class Form1
+    partial class formAnasayfa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAnasayfa));
             this.btnGelirler = new System.Windows.Forms.Button();
             this.btnGiderler = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -67,7 +67,7 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // formAnasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,7 +75,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGiderler);
             this.Controls.Add(this.btnGelirler);
-            this.Name = "Form1";
+            this.Name = "formAnasayfa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Apartman Otomasyon";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
